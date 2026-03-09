@@ -2,15 +2,6 @@ name: Verify Human Identity
 
 on:
   workflow_dispatch:
-    inputs:
-      agent_name:
-        description: "Agent name"
-        required: true
-        default: "finder"
-      agent_description:
-        description: "Agent description"
-        required: true
-        default: "finder AI Agent"
 
 jobs:
   verify:
@@ -38,4 +29,4 @@ jobs:
 
       - name: Link Human to Agent
         run: |
-          node scripts/manualLinkHumanToAgent.js --challenge '{"name":"${{ github.event.inputs.agent_name }}","description":"${{ github.event.inputs.agent_description }}"}'
+          node scripts/manualLinkHumanToAgent.js --challenge '{"name":"finder","description":"finder AI Agent"}'
